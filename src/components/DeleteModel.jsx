@@ -19,9 +19,11 @@ const DeleteModal = ({ onOpen, isOpen, onClose, id }) => {
   const [deleteToggle, setDeleteToggle] = useState(false);
 
   const handleDelete = () => {
-    axios.delete(`http://localhost:8080/data/delete/${id}`).then((res) => {
-      alert("Item Deleted");
-    });
+    axios
+      .delete(`https://jstiger-backend.onrender.com/data/delete/${id}`)
+      .then((res) => {
+        alert("Item Deleted");
+      });
     setDeleteToggle(!deleteToggle);
     onClose();
   };

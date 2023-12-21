@@ -4,7 +4,7 @@ export const signUpAPI = async (userData) => {
   console.log("userDAta", userData);
   try {
     const response = await axios.post(
-      `http://localhost:8080/auth/signup`,
+      `https://jstiger-backend.onrender.com/auth/signup`,
       userData
     );
     console.log(" from signup api function", response.data);
@@ -18,7 +18,7 @@ export const signUpAPI = async (userData) => {
 export const loginAPI = async (userData) => {
   try {
     const response = await axios.post(
-      `http://localhost:8080/auth/login`,
+      `https://jstiger-backend.onrender.com/auth/login`,
       userData
     );
     console.log(" from login api function", response.data);
@@ -31,7 +31,7 @@ export const loginAPI = async (userData) => {
 export const googleAPI = async () => {
   try {
     const response = await axios.get(
-      `http://localhost:8080/auth/google/success`
+      `https://jstiger-backend.onrender.com/auth/google/success`
     );
     console.log(" from google api function", response.data);
     localStorage.setItem("gdata", response.data);
@@ -44,7 +44,10 @@ export const googleAPI = async () => {
 
 export const addDataAPI = async (userData) => {
   try {
-    const res = await axios.post("http://localhost:8080/data/add", userData);
+    const res = await axios.post(
+      "https://jstiger-backend.onrender.com/data/add",
+      userData
+    );
     return res.data;
   } catch (error) {
     throw error;
@@ -53,7 +56,9 @@ export const addDataAPI = async (userData) => {
 
 export const getVenderDataAPI = async () => {
   try {
-    const res = await axios.get("http://localhost:8080/data/get");
+    const res = await axios.get(
+      "https://jstiger-backend.onrender.com/data/get"
+    );
     return res.data;
   } catch (error) {
     throw error;

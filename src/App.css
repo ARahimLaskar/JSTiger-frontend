@@ -1,0 +1,117 @@
+#root {
+  text-align: center;
+}
+
+/* nav bar section */
+nav {
+  background-color: #1b4a32;
+}
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* add vendor section */
+
+.add-section {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 2rem 0;
+}
+.add-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* table section */
+.table-section {
+  max-width: 1280px;
+  margin: 3rem auto;
+}
+.table-container {
+  overflow-x: auto;
+  padding: 1rem;
+  border: 1px solid rgb(192, 188, 188);
+  border-radius: 8px;
+  margin: 0 1rem;
+}
+
+.table-container thead {
+  padding: 0.5rem;
+  background-color: #f2f2f2;
+}
+.table-container tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th {
+  padding: 0.5rem;
+  text-align: center;
+}
+.table-container td {
+  padding: 0.5rem;
+  text-align: left;
+}
+.centered-td {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .table-container thead {
+    display: none;
+  }
+  .table-container tbody tr:nth-child(even) {
+    background-color: white;
+  }
+  .table-container table,
+  .table-container tbody,
+  .table-container th,
+  .table-container td,
+  .table-container tr {
+    display: block;
+  }
+
+  .table-container td {
+    display: block;
+    text-align: left;
+    border: none;
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+  }
+  .table-container table tbody tr {
+    padding: 2rem;
+  }
+
+  .table-container .centered-td {
+    width: 100%;
+    clear: both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: "100px";
+    margin-bottom: 3rem;
+    background-color: rgba(233, 233, 233, 0.605);
+    border-bottom: 3px solid rgb(181, 166, 166);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .table-container td {
+    width: 100%;
+    float: none;
+  }
+}

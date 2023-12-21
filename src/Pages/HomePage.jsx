@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getGoogleUser } from "../Redux/rootReducer";
 import axios from "axios";
+import { Button, Heading } from "@chakra-ui/react";
 
 export const HomePage = () => {
   const navigate = useNavigate();
@@ -13,33 +14,19 @@ export const HomePage = () => {
   // }, []);
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8080/auth/login/success")
-      .then((res) => {
-        if (res.status === 200) {
-          console.log("res.data", res.data);
-          localStorage.setItem("userdata", res.data);
-          return res.data;
-        } else {
-          throw new Error("authentication fail");
-        }
-      })
-      .then((resObj) => {
-        setUser(resObj.user);
-      })
-      .catch((err) => console.log(err));
-  }, []);
   return (
-    <div>
-      <p>HomePage</p>
-      <button
+    <div style={{ lineHeight: "10" }}>
+      <Heading>Welcome....... </Heading>
+      <Heading>Explore Us..... </Heading>
+      <Button
+        colorScheme="blue"
+        variant="outline"
         onClick={() => {
           navigate("/vendor");
         }}
       >
         Lets Start
-      </button>
+      </Button>
     </div>
   );
 };
